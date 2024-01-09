@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Services\UserService;
 use Illuminate\Support\Facades\Facade;
+
 
 return [
 
@@ -177,6 +179,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        
+
     ],
 
     /*
@@ -190,8 +194,9 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // ...
-    ])->toArray(),
+    'aliases' => [
+        'UserService' => App\Services\UserService::class,
+        // Add other aliases if needed
+    ],
 
 ];

@@ -14,9 +14,11 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
+
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -35,9 +37,11 @@ return [
     |
     */
 
+    
     'guards' => [
-        'web' => [
-            'driver' => 'session',
+         // API Guard Configuration to implement the jwt as a driver..
+        'api' => [
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],

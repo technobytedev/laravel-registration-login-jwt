@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Http\Services\UserService;
 use Illuminate\Routing\Controller;
 
-//using UserService as main logic
-use App\Http\Services\UserService;
+//using the requests
+use App\Http\Requests\RegistrationRequest;
+use App\Http\Requests\LoginRequest;
+
 
 
 class UserController extends Controller
@@ -18,12 +19,12 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
-    public function register(Request $request)
+    public function register(RegistrationRequest $request)
     {
         return $this->userService->registerUser($request);
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         return $this->userService->loginUser($request);
     }
