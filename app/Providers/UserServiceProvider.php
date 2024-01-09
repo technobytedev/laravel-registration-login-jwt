@@ -5,20 +5,22 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Http\Services\UserService;
 
-class AppServiceProvider extends ServiceProvider
+class UserServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-       
+        $this->app->bind('UserService', function ($app) {
+            return new UserService($app);
+        });
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
