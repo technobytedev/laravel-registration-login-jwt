@@ -118,8 +118,14 @@ create db in phpmyadmin name as : home_buyer
 using a respository:
 https://github.com/technobytedev/laravel-registration-login-jwt
 
-run composer install
-run php artisan serve
+composer install --ignore-platform-req=ext-sodium
+
+php artisan key:generate
+
+php artisan migrate
+
+php artisan serve
+
 
 
 ## Usage
